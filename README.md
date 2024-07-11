@@ -1,5 +1,7 @@
 # JavaFX CRUD MVC
 
+![a](https://raw.githubusercontent.com/andreriffen/javafx-mvc/main/screenshot.fw.png)
+
 Este projeto é um exemplo de aplicação JavaFX que segue o padrão MVC (Model-View-Controller) para a implementação de um CRUD (Create, Read, Update, Delete). 
  
 Está sendo desenvolvido como parte de uma lição de casa para a disciplina Programação Orientada a Objetos do Curso Técnico de Desenvolvimento de Sistemas - IFSC; após a greve dos professores e servidores (de 06/05/2024 a 03/07/2024)
