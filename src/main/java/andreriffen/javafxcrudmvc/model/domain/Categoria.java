@@ -8,7 +8,7 @@ public class Categoria implements Serializable {
     private int cdCategoria;
     private String descricao;
 
-    public Categoria(){
+    public Categoria() {
     }
 
     public Categoria(int cdCategoria, String descricao) {

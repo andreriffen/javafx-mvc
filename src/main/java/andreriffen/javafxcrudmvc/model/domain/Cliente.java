@@ -10,7 +10,7 @@ public class Cliente implements Serializable {
     private String cpf;
     private String telefone;
 
-    public Cliente(){
+    public Cliente() {
     }
 
     public Cliente(int cdCliente, String nome, String cpf) {
