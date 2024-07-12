@@ -158,12 +158,11 @@ public class VendaDAO {
 
             while (resultado.next()) {
                 ArrayList linha = new ArrayList();
-                if (!retorno.containsKey(resultado.getInt("ano")))
-                {
+                if (!retorno.containsKey(resultado.getInt("ano"))) {
                     linha.add(resultado.getInt("mes"));
                     linha.add(resultado.getInt("count"));
                     retorno.put(resultado.getInt("ano"), linha);
-                }else{
+                } else {
                     ArrayList linhaNova = retorno.get(resultado.getInt("ano"));
                     linhaNova.add(resultado.getInt("mes"));
                     linhaNova.add(resultado.getInt("count"));

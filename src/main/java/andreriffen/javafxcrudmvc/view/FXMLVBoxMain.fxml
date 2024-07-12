@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="andreriffen.javafxcrudmvc.view.FXMLVBoxMain">
+<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22"
+      fx:controller="andreriffen.javafxcrudmvc.view.FXMLVBoxMain">
 
     <MenuBar>
         <Menu mnemonicParsing="false" text="Cadastros">
-            <MenuItem fx:id="menuItemCadastrosCategorias" mnemonicParsing="false" text="Categorias" />
-            <MenuItem fx:id="menuItemCadastrosClientes" mnemonicParsing="false" onAction="#handleMenuItemCadastrosClientes" text="Clientes" />
-            <MenuItem fx:id="menuItemCadastrosProdutos" mnemonicParsing="false" text="Produtos" />
+            <MenuItem fx:id="menuItemCadastrosCategorias" mnemonicParsing="false" text="Categorias"/>
+            <MenuItem fx:id="menuItemCadastrosClientes" mnemonicParsing="false"
+                      onAction="#handleMenuItemCadastrosClientes" text="Clientes"/>
+            <MenuItem fx:id="menuItemCadastrosProdutos" mnemonicParsing="false" text="Produtos"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Processos">
-            <MenuItem fx:id="menuItemProcessosVendas" mnemonicParsing="false" text="Vendas" />
+            <MenuItem fx:id="menuItemProcessosVendas" mnemonicParsing="false" text="Vendas"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Gráficos">
-            <MenuItem fx:id="menuItemGraficosVendasPorMes" mnemonicParsing="false" text="Vendas por Mês" />
+            <MenuItem fx:id="menuItemGraficosVendasPorMes" mnemonicParsing="false" text="Vendas por Mês"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Relatórios">
-            <MenuItem fx:id="menuItemRelatoriosQuantidadeProdutos" mnemonicParsing="false" text="Quantidade de Produtos" />
+            <MenuItem fx:id="menuItemRelatoriosQuantidadeProdutos" mnemonicParsing="false"
+                      text="Quantidade de Produtos"/>
         </Menu>
     </MenuBar>
-    <AnchorPane prefHeight="380.0" prefWidth="600.0" />
+    <AnchorPane prefHeight="380.0" prefWidth="600.0"/>
 </VBox>
