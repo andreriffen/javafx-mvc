@@ -11,7 +11,6 @@ import andreriffen.javafxcrudmvc.model.domain.*;
 import javafx.collections.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -73,30 +72,37 @@ public class FXMLAnchorPaneCadastrosClientes implements Initializable {
     }
 
 
-    private List<Cliente> listClientes;
-
-    private ObservableList<Cliente> observableListClientes;
-
     //Atributos para manipulação do Banco de Dados
-    private final Database database = DatabaseFactory.getDatabase("postgreesql");
+    private final Database database = DatabaseFactory.getDatabase("javafxmvc");
 
-    private final Connection connection = database.conectar();
+    private final Connection connection;
+
+    {
+        assert database != null;
+        connection = database.conectar();
+    }
 
     private final ClienteDAO clienteDAO = new ClienteDAO();
 
     @Override
-    public void initialize(URL url, ResourceBundle rb){
-        clienteDAO.setConnection(connection);
-        carregarTableViewCliente();
+    public void initialize(URL url, ResourceBundle rb) {
+        if (connection != null) {
+            clienteDAO.setConnection(connection);
+            carregarTableViewCliente();
+        } else {
+            System.err.println("Erro ao conectar com o banco de dados.");
+        }
     }
+
 
     public void carregarTableViewCliente(){
         tableCollumnClienteNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         tableCollumnClienteCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 
-        listClientes = clienteDAO.listar();
+        List<Cliente> listClientes = clienteDAO.listar();
 
-        observableListClientes = FXCollections.observableArrayList(listClientes);
+        ObservableList<Cliente> observableListClientes = FXCollections.observableArrayList(listClientes);
+
         tableviewClientes.setItems(observableListClientes);
     }
 }

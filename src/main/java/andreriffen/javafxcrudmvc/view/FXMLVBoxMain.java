@@ -53,7 +53,7 @@ public class FXMLVBoxMain {
 
     @FXML
     public void handleMenuItemCadastrosClientes() throws IOException {
-        AnchorPane a = (AnchorPane) FXMLLoader.load(Objects.requireNonNull(getClass().getResource("src/main/java/andreriffen/javafxcrudmvc/view/FXMLAnchorPaneCadastrosClientes.java")));
+        AnchorPane a = (AnchorPane) FXMLLoader.load(Objects.requireNonNull(getClass().getResource("FXMLAnchorPaneCadastrosClientes.fxml")));
         anchorPane.getChildren().setAll(a);
     }
 }
