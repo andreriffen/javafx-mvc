@@ -1,17 +1,22 @@
 package andreriffen.javafxcrudmvc.view;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import andreriffen.javafxcrudmvc.model.domain.Cliente;
-import javafx.collections.ObservableList;
+import andreriffen.javafxcrudmvc.model.dao.*;
+import andreriffen.javafxcrudmvc.model.database.*;
+import andreriffen.javafxcrudmvc.model.domain.*;
+import javafx.collections.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 @SuppressWarnings("SpellCheckingInspection")// WELCOME TO BRAZIL!!! 🇧🇷 🇧🇷 🇧🇷
 public class FXMLAnchorPaneCadastrosClientes implements Initializable {
@@ -50,7 +55,7 @@ public class FXMLAnchorPaneCadastrosClientes implements Initializable {
     private TableColumn<?, ?> tableCollumnClienteNome;
 
     @FXML
-    private TableView<?> tableviewClientes;
+    private TableView<Cliente> tableviewClientes;
 
     @FXML
     void initialize() {
@@ -72,10 +77,25 @@ public class FXMLAnchorPaneCadastrosClientes implements Initializable {
     private ObservableList<Cliente> observableListClientes;
 
     //Atributos para manipulação do Banco de Dados
+    private final Database database = DatabaseFactory.getDatabase("postgreesql");
+
+    private final Connection connection = database.conectar();
+
+    private final ClienteDAO clienteDAO = new ClienteDAO();
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        //TODO
+        clienteDAO.setConnection(connection);
+        carregarTableViewCliente();
     }
 
+    public void carregarTableViewCliente(){
+        tableCollumnClienteNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        tableCollumnClienteCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+
+        listClientes = clienteDAO.listar();
+
+        observableListClientes = FXCollections.observableArrayList(listClientes);
+        tableviewClientes.setItems(observableListClientes);
+    }
 }
