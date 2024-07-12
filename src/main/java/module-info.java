@@ -12,6 +12,7 @@ module andreriffen.javafxcrudmvc {
 
     requires java.sql;
     requires atlantafx.base;
+    requires org.postgresql.jdbc;
 
     opens andreriffen.javafxcrudmvc to javafx.fxml;
     opens andreriffen.javafxcrudmvc.view to javafx.fxml;

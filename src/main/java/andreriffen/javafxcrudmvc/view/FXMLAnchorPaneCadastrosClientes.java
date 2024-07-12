@@ -72,6 +72,7 @@ public class FXMLAnchorPaneCadastrosClientes implements Initializable {
 
     }
 
+
     private List<Cliente> listClientes;
 
     private ObservableList<Cliente> observableListClientes;

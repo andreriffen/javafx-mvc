@@ -13,7 +13,6 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("FXMLVBoxMain.fxml"));
-        //FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("FXMLAnchorPaneCadastrosClientes.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
         stage.setTitle("Hello!");

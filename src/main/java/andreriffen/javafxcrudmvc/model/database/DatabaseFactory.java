@@ -2,11 +2,12 @@ package andreriffen.javafxcrudmvc.model.database;
 
 public class DatabaseFactory {
     public static Database getDatabase(String nome){
-        if(nome.equals("postgresql")){
+        if(nome.equalsIgnoreCase("postgresql")){
             return new DatabasePostgreSQL();
-        }else if(nome.equals("mysql")){
+        } else if(nome.equalsIgnoreCase("mysql")){
             return new DatabaseMySQL();
         }
         return null;
     }
 }
+

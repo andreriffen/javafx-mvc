@@ -5,6 +5,6 @@ import java.sql.Connection;
 @SuppressWarnings("SpellCheckingInspection") //Avoid 'typo error' IDE English
 public interface Database {
 
-    public Connection conectar();
-    public void desconectar(Connection conn);
+    Connection conectar();
+    void desconectar(Connection conn);
 }
