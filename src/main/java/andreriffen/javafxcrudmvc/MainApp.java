@@ -15,13 +15,12 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        //FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("FXMLAnchorPaneCadastrosClientes.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("FXMLVBoxMain.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        //FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("MainFx.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("CadastrosClientes.fxml"));
         Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Hello!");
         stage.setScene(scene);
-        stage.setResizable(false);
         stage.show();
     }
 }
