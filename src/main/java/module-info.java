@@ -1,12 +1,13 @@
-module andreriffen.javafxcrudmvc {
+module andreriffen.javafxmvc {
+    requires javafx.controls;
     requires javafx.fxml;
-
     requires atlantafx.base;
     requires java.sql;
+    requires jasperreports;
 
-    opens andreriffen.javafxcrudmvc to javafx.fxml;
-    opens andreriffen.javafxcrudmvc.controller to javafx.fxml;
+    // Permitir que o módulo javafx.fxml acesse os pacotes internos
+    opens andreriffen.javafxmvc.controller to javafx.fxml;
+    opens andreriffen.javafxmvc to javafx.fxml;
 
-    exports andreriffen.javafxcrudmvc;
-    exports andreriffen.javafxcrudmvc.controller;
+    exports andreriffen.javafxmvc;
 }
